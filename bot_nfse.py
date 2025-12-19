@@ -460,13 +460,35 @@ class NFSePortalBot:
 
     def _inicializar_navegador(self) -> None:
         chrome_options = Options()
+
         chrome_options.add_experimental_option("prefs", {
             "download.default_directory": PASTA_DOWNLOAD_TEMP,
             "download.prompt_for_download": False,
             "download.directory_upgrade": True,
             "safebrowsing.enabled": True,
         })
-        chrome_options.add_argument("--start-maximized")
+
+        # Modo cloud/headless (ex.: Render/Docker)
+        headless = os.getenv("HEADLESS", "").strip().lower() in {"1", "true", "yes", "y"}
+        if headless:
+            chrome_options.add_argument("--headless=new")
+            chrome_options.add_argument("--no-sandbox")
+            chrome_options.add_argument("--disable-dev-shm-usage")
+            chrome_options.add_argument("--window-size=1920,1080")
+        else:
+            chrome_options.add_argument("--start-maximized")
+
+        # Permite informar o binário do Chrome/Chromium via env (útil em Docker)
+        chrome_bin = os.getenv("CHROME_BIN") or os.getenv("GOOGLE_CHROME_BIN")
+        if chrome_bin:
+            chrome_options.binary_location = chrome_bin
+
+        # Permite informar o caminho do chromedriver via env (útil em Docker)
+        chromedriver_path = os.getenv("CHROMEDRIVER_PATH")
+        if chromedriver_path and os.path.exists(chromedriver_path):
+            service = Service(executable_path=chromedriver_path)
+            self.driver = webdriver.Chrome(service=service, options=chrome_options)
+            return
 
         if USE_WEBDRIVER_MANAGER:
             service = Service(ChromeDriverManager().install())

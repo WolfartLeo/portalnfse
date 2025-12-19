@@ -1,6 +1,9 @@
 # auth.py
 import json
 import os
+import shutil
+
+SECRETS_DIR = os.environ.get("SECRETS_DIR", "/etc/secrets")
 from dataclasses import dataclass
 from typing import Dict, Optional
 

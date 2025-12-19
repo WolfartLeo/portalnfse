@@ -6,5 +6,6 @@ passlib>=1.7.4
 pywinauto; platform_system=="Windows"
 pytesseract; platform_system=="Windows"
 pillow
-# opcionais (certificado / OCR) - instale se for usar
 pyautogui; platform_system=="Windows"
+webdriver-manager>=4.0
+python-dateutil>=2.9

@@ -1,0 +1,10 @@
+.venv
+__pycache__/
+*.pyc
+downloads_temp/
+saidas/
+logs/
+config.local.json
+users.json
+planilhas/ACESSO_PORTAL_NACIONAL.xlsx
+imagens/cert_*.png
