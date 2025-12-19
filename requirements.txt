@@ -1,0 +1,10 @@
+streamlit>=1.33
+pandas>=2.0
+selenium>=4.10
+openpyxl>=3.1
+passlib>=1.7.4
+pywinauto; platform_system=="Windows"
+pytesseract; platform_system=="Windows"
+pillow
+# opcionais (certificado / OCR) - instale se for usar
+pyautogui; platform_system=="Windows"

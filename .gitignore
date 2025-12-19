@@ -1,0 +1,17 @@
+# ambiente
+.venv/
+__pycache__/
+*.pyc
+
+# dados locais/sensíveis
+config.local.json
+users.json
+planilhas/ACESSO_PORTAL_NACIONAL.xlsx
+
+# saída do robô
+downloads_temp/
+logs/
+saidas/
+
+# imagens sensíveis (prints de certificados)
+imagens/cert_*.png

@@ -1,0 +1,7 @@
+{
+  "caminho_planilha": "./planilhas/ACESSO_PORTAL_NACIONAL.xlsx",
+  "pasta_base_saida": "./saidas",
+  "pasta_download_temp": "./downloads_temp",
+  "pasta_imagens_cert": "./imagens",
+  "delay_acao": 3.5
+}
