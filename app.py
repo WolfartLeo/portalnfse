@@ -16,8 +16,12 @@ import auth
 import config as cfgmod
 import data_store
 
-st.set_page_config(page_title="Portal NFS-e", page_icon="🧾", layout="wide")
-
+st.set_page_config(
+    page_title="Portal NFS-e",
+    page_icon="🧾",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
 st.markdown(
     r'''
