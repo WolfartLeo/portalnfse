@@ -41,7 +41,7 @@ st.markdown(
 .block-container { padding-top: 1.0rem; padding-bottom: 2.2rem; }
 
 /* Hide Streamlit default header & footer */
-header[data-testid="stHeader"] { visibility: hidden; height: 0px; }
+header[data-testid="stHeader"] { background: transparent; }
 footer { visibility: hidden; height: 0px; }
 
 /* Sidebar polish */
